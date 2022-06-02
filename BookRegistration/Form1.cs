@@ -1,10 +1,15 @@
 namespace BookRegistration
 {
-    public partial class Form1 : Form
+    public partial class FrmBookRegistration : Form
     {
-        public Form1()
+        public FrmBookRegistration()
         {
             InitializeComponent();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
