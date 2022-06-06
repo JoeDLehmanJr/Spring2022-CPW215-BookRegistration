@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BookRegistration.Book">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAEAAAAAAAAAAAQAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookRegistration.Customer">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQAABAAIAAAAAAAAAAEAAQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookRegistration.Registration">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAQAAAAAAAAAAAAAAEAAAAAAABAAAACAAAAA=</HashCode>
+      <FileName>Registration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookRegistration.BookDB">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAACAAA=</HashCode>
+      <FileName>BookDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookRegistration.CustomerDB">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAACAAAAAAAAAAAAEAAAAAIAAAAAACAAA=</HashCode>
+      <FileName>CustomerDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookRegistration.BookRegistrationDB">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAQAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BookRegistrationDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
