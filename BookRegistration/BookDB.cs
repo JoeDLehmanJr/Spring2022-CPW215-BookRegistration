@@ -1,40 +1,77 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Data.SqlClient;
+#nullable disable
+
 
 namespace BookRegistration
 {
+    /// <summary>
+    /// This method assists with adding and getting Book information from a T-SQL database.
+    /// </summary>
     public class BookDB
     {
-        public void add(Book book)
+        /// <summary>
+        /// Adds a book to the database
+        /// </summary>
+        /// <param name="book">The book information for the book to be added.</param>
+        public static void Add(Book book)
         {
-            throw new System.NotImplementedException();
+            // Get Connection
+            using SqlConnection con = DBHelper.GetConnection();
+
+            // Prepare insert statement
+            SqlCommand insertCmd = new()
+            {
+                Connection = con,
+
+                // Parameterized query
+                CommandText = "Insert Into Book(ISBN, Price, Title)" +
+                "Values (@ISBN, @Price, @Title)"
+            };
+            insertCmd.Parameters.AddWithValue("@ISBN", book.Isbn);
+            insertCmd.Parameters.AddWithValue("@Price", book.Price);
+            insertCmd.Parameters.AddWithValue("@Title", book.Title);
+            
+            // Open connection to the database
+            con.Open();
+
+            // Execute insert query
+            insertCmd.ExecuteNonQuery();
         }
 
-        private System.Data.SqlClient.SqlConmection GetBookDBConnection()
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public System.Collections.Generic.List<Book> GetAllBooks()
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void Update(Book book)
+        /// <summary>
+        /// Gets all Book information from the database.
+        /// </summary>
+        /// <returns>All the Book information wrapped up into a List</returns>
+        public static List<Book> GetAllBooks()
         {
-            throw new System.NotImplementedException();
-        }
+            using SqlConnection con = DBHelper.GetConnection();
 
-        public void Delete(int isbn)
-        {
-            throw new System.NotImplementedException();
-        }
+            // Prepare the query
+            SqlCommand selCmd = new()
+            {
+                Connection = con,
+                CommandText = "Select ISBN, Price, Title" +
+                " From Book Order By Title"
+            };
 
-        public void Delete(Book book)
-        {
-            throw new System.NotImplementedException();
+            // Open connection to the database
+            con.Open();
+
+            // Execute the query and use results
+            SqlDataReader reader = selCmd.ExecuteReader();
+            List<Book> books = new();
+            while (reader.Read())
+            {
+                string isbn = reader["ISBN"].ToString();
+                decimal price = Convert.ToDecimal(reader["Price"]);
+                string title = reader["Title"].ToString();
+
+                Book book = new(isbn, price, title);
+                books.Add(book);
+            }
+            return books;
         }
     }
 }
