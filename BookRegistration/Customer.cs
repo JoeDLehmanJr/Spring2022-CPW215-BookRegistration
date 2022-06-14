@@ -5,60 +5,78 @@ using System.Text;
 
 namespace BookRegistration
 {
+    /// <summary>
+    /// Creates a Customer object with five 
+    /// characteristics: the customerid, the date of birth, 
+    /// the first name, last name, and personnel title.
+    /// </summary>
     public class Customer
     {
-        public Customer(System.DateTime dateOfBirth, string fName, string lastName)
+        private int _customerID;
+
+        /// <summary>
+        /// Constructor for creating the customer object
+        /// </summary>
+        /// <param name="dateOfBirth"></param>
+        /// <param name="fName"></param>
+        /// <param name="lName"></param>
+        /// <param name="title"></param>
+        public Customer(DateTime dateOfBirth, string fName, string lName, string title)
         {
-            throw new System.NotImplementedException();
+            this.DateOfBirth = dateOfBirth;
+            FirstName = fName;
+            LastName = lName;
+            Title = title;
         }
 
+        /// <summary>
+        /// Getter and setter for the _customerID field.
+        /// </summary>
         public int CustomerID
         {
-            get => default;
-            set
+            get { return _customerID; }
+            set { _customerID = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the date of birth attribute.
+        /// </summary>
+        public DateTime DateOfBirth { get; set; }
+
+        /// <summary>
+        /// Gets and sets the first name attribute.
+        /// </summary>
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// Gets and sets the last name attribute.
+        /// </summary>
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// gets the full name by concatenate the last 
+        /// name, a comma and a space, and the first name.
+        /// </summary>
+        public string FullName
+        {
+            get
             {
+                return LastName + ", " + FirstName;
             }
         }
 
-        public System.DateTime DateOfBirth
+        /// <summary>
+        /// The string representation of the object
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
         {
-            get => default;
-            set
-            {
-            }
+            return FullName;
         }
 
-        public string FirstName
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public string LastName
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public string FullName()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public overrideToString()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public byte GetAge()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private int _customerID;
+        /// <summary>
+        /// Gets and sets the title attribute.
+        /// </summary>
+        public string Title { get; set; }
     }
 }
