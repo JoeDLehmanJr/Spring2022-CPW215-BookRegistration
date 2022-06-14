@@ -45,27 +45,30 @@
             this.BtnAddCustomer.Location = new System.Drawing.Point(331, 16);
             this.BtnAddCustomer.Name = "BtnAddCustomer";
             this.BtnAddCustomer.Size = new System.Drawing.Size(103, 44);
-            this.BtnAddCustomer.TabIndex = 1;
+            this.BtnAddCustomer.TabIndex = 5;
             this.BtnAddCustomer.Text = "Add Customer";
             this.BtnAddCustomer.UseVisualStyleBackColor = true;
+            this.BtnAddCustomer.Click += new System.EventHandler(this.BtnAddCustomer_Click);
             // 
             // BtnAddBook
             // 
             this.BtnAddBook.Location = new System.Drawing.Point(331, 103);
             this.BtnAddBook.Name = "BtnAddBook";
             this.BtnAddBook.Size = new System.Drawing.Size(103, 44);
-            this.BtnAddBook.TabIndex = 4;
+            this.BtnAddBook.TabIndex = 6;
             this.BtnAddBook.Text = "Add Book";
             this.BtnAddBook.UseVisualStyleBackColor = true;
+            this.BtnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
             // 
             // BtnRegisterBook
             // 
             this.BtnRegisterBook.Location = new System.Drawing.Point(112, 154);
             this.BtnRegisterBook.Name = "BtnRegisterBook";
             this.BtnRegisterBook.Size = new System.Drawing.Size(103, 44);
-            this.BtnRegisterBook.TabIndex = 5;
+            this.BtnRegisterBook.TabIndex = 3;
             this.BtnRegisterBook.Text = "Register Book";
             this.BtnRegisterBook.UseVisualStyleBackColor = true;
+            this.BtnRegisterBook.Click += new System.EventHandler(this.BtnRegisterBook_Click);
             // 
             // CmbCustomerName
             // 
@@ -81,7 +84,7 @@
             this.CmbBookTitle.Location = new System.Drawing.Point(112, 67);
             this.CmbBookTitle.Name = "CmbBookTitle";
             this.CmbBookTitle.Size = new System.Drawing.Size(208, 23);
-            this.CmbBookTitle.TabIndex = 2;
+            this.CmbBookTitle.TabIndex = 1;
             // 
             // label1
             // 
@@ -89,7 +92,7 @@
             this.label1.Location = new System.Drawing.Point(9, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 15);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Customer Name:";
             // 
             // label2
@@ -98,7 +101,7 @@
             this.label2.Location = new System.Drawing.Point(44, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 15);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Book Title:";
             // 
             // label3
@@ -107,7 +110,7 @@
             this.label3.Location = new System.Drawing.Point(6, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 15);
-            this.label3.TabIndex = 8;
+            this.label3.TabIndex = 9;
             this.label3.Text = "Registration Date:";
             // 
             // DtpRegistrationDate
@@ -115,14 +118,15 @@
             this.DtpRegistrationDate.Location = new System.Drawing.Point(112, 114);
             this.DtpRegistrationDate.Name = "DtpRegistrationDate";
             this.DtpRegistrationDate.Size = new System.Drawing.Size(208, 23);
-            this.DtpRegistrationDate.TabIndex = 3;
+            this.DtpRegistrationDate.TabIndex = 2;
+            this.DtpRegistrationDate.ValueChanged += new System.EventHandler(this.DtpRegistrationDate_ValueChanged);
             // 
             // BtnExit
             // 
             this.BtnExit.Location = new System.Drawing.Point(242, 154);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(103, 44);
-            this.BtnExit.TabIndex = 9;
+            this.BtnExit.TabIndex = 4;
             this.BtnExit.Text = "Exit";
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -146,6 +150,7 @@
             this.Name = "FrmBookRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Registration";
+            this.Load += new System.EventHandler(this.FrmBookRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
